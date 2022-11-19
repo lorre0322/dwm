@@ -2,30 +2,24 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 8;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int gappx     = 1;        /* gaps between windows */
+static const unsigned int snap      = 1;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systraypinning = 5;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 8;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
 static const Bool viewontag	    = True;     /* Switch View on tag switch */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=18",
-				        "JoyPixels:size=18",
-				      };
-static const char dmenufont[]       = "JetBrainMono Nerd Font:size=16";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#43A5F5";
+static const char *fonts[]          = { 
+	"JetBrainsMono Nerd Font:size=16",
+};
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { "#FFEBCD", "#2c3643", "#444444" },
+	[SchemeSel]  = { "#2c3643", "#FFEBCD", "#cccccc"  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -34,44 +28,38 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ₁", " ₂", " ₃", "﵂ ₄", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
 /* launcher commands (They must be NULL terminated) */
-static const char* chromeGitee[]      = { "google-chrome-stable", "https://gitee.com/ChenXin888", NULL };
-static const char* chromeGithub[]      = { "google-chrome-stable", "https://github.com/CcccX2017", NULL };
-static const char* chromecmd[]      = { "google-chrome-stable", NULL, NULL };
-static const char* togglecmd[]      = { "/home/codex/Scripts/t-toggle.sh", NULL, NULL };
+static const char* fireGithub[]      = { "firefox", "https://github.com/lorre0322", NULL };
+static const char* firefox[]      = { "firefox", NULL, NULL };
 
 static const Launcher launchers[] = {
        /* command       name to display */
-	{ chromeGitee,         "" },
-	{ chromeGithub,         "" },
+	{ fireGithub,   "Lorre" },
 };
 
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class		|instance	|title		|tags mask|isfloating| monitor */
+	{ "netease-cloud-music"	, NULL		, NULL		, 0	 , 1	, -1	},
+	{ "firefox"		, NULL		, NULL		, 0	 , 0	, -1	},
+	{ NULL			, "wechat.exe"	, NULL		, 0	 , 1	, -1	},
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* 窗口比例 */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
-	{ "",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "  ",      tile },    /* 平铺 */
+	{ "  ",      NULL },    /* 窗口 */
+	{ "-M-",      monocle },/* 单应用 */
 };
 
 /* key definitions */
@@ -88,58 +76,69 @@ static const Layout layouts[] = {
 #define STATUSBAR "dwmblocks"
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "rofi", "-no-lazy-grab", "-show", "drun", "-modi", "drun", "-theme", ".config/rofi/launchers/colorful/style_7", NULL };
+static const char *rofi[] ={"rofi","-show","drun",NULL};
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char* volpluscmd[] = {"pamixer", "--allow-boost", "-i", "1",NULL};
-static const char* voldiffcmd[] = {"pamixer", "--allow-boost", "-d", "1",NULL};
-static const char* mutecmd[] = {"pamixer", "-t", NULL};
-static const char* pkill7cmd[] = { "pkill", "-RTMIN+7", "dwmblocks", NULL };
-static const char* backlightinccmd[] = { "xbacklight", "-inc", "10", NULL };
-static const char* backlightdeccmd[] = { "xbacklight", "-dec", "10", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname , "-g", "120x34", NULL };
+static const char *screenshot[] = { "deepin-screenshot", NULL };/* deepin-screenshot截图 */
+/* 定义音量和亮度管理 */
+static const char *voiceup[] = { "amixer" , "set" , "Master" , "5%+" , NULL };
+static const char *voicedown[] = { "amixer" , "set" , "Master" , "5%-" , NULL };
+static const char *voicetoggle[] = { "amixer" , "set" , "Master" , "toggle" , NULL };
+/* 外接显示屏是适用 xrandr查看 */
+static const char *xrandrdark[] = { "xrandr" , "--output" , "HDMI-0" , "--brightness" , "0.7" , NULL };
+static const char *xrandrlight[] = { "xrandr" , "--output" , "HDMI-0" , "--brightness" , "0.9" , NULL };
+static const char *xrandrfull[] = { "xrandr" , "--output" , "HDMI-0" , "--brightness" , "1" , NULL };
+/* mpc音乐播放 */
+static const char *mpctoggle[] = { "mpc" , "toggle" , NULL };
+static const char *mpcprev[] = { "mpc" , "prev" , NULL };
+static const char *mpcnext[] = { "mpc" , "next" , NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	/* 自定义打开应用 */
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = screenshot } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,             		XK_c, 	   spawn,          {.v = chromecmd } },
-	{ MODKEY|ShiftMask,             XK_t, 	   spawn,          {.v = togglecmd } },
-	{ MODKEY,                           XK_F11,    spawn,          {.v = voldiffcmd } },
-	{ MODKEY,                           XK_F11,    spawn,          {.v = pkill7cmd } },
-	{ MODKEY,                           XK_F12,    spawn,          {.v = volpluscmd } },
-	{ MODKEY,                           XK_F12,    spawn,          {.v = pkill7cmd } },
-		{ MODKEY,                       XK_F10,    spawn,          {.v = mutecmd } },
-	{ MODKEY,                           XK_F10,    spawn,          {.v = pkill7cmd } },
-	{ MODKEY,                           XK_F5,    spawn,          {.v = backlightdeccmd } },
-	{ MODKEY,                           XK_F6,    spawn,          {.v = backlightinccmd } },
-	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
+	{ MODKEY,                       XK_c, 	   spawn,          {.v = firefox } },	
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },/* 临时终端 */
+	/* 自定义音量管理按键 */
+	{ MODKEY,                       XK_F11,	   spawn,          {.v = voicedown } },
+	{ MODKEY,                       XK_F12,    spawn,          {.v = voiceup } },
+	{ MODKEY|ShiftMask,             XK_F12,    spawn,          {.v = voicetoggle } },
+	{ MODKEY,                       XK_F9, 	   spawn,          {.v = mpcprev } },
+	{ MODKEY,                       XK_F10,    spawn,          {.v = mpcnext } },
+	{ MODKEY|ShiftMask,             XK_F10,    spawn,          {.v = mpctoggle } },
+	/* 自定义音乐播放 */
+	{ MODKEY,                       XK_F7,	   spawn,          {.v = xrandrdark } },
+	{ MODKEY,                       XK_F8,	   spawn,          {.v = xrandrlight } },
+	{ MODKEY|ShiftMask,             XK_F8,	   spawn,          {.v = xrandrfull } },
+	
+	{ MODKEY,                       XK_b,      togglebar,      {0} },/* 隐藏顶栏 */
+	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },/* 切换窗口堆栈 */
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },/* 切换聚焦窗口 */
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } }, /* 改变横竖布局 */
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },/* 改变窗口比例 */
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_Return, zoom,           {0} },/* 第一二应用换位 */
+	{ MODKEY,                       XK_Tab,    view,           {0} },/* 切换tag */
+	{ MODKEY,                       XK_q,      killclient,     {0} },/* 关闭窗口 */
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },/* 更换布局1 */
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },/* 全屏 */
+	{ MODKEY,                       XK_space,  setlayout,      {0} },/* 选择布局 */
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },/* 切换浮动 */
+	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },/* 跳转到1-9标签 */
+	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },/* 把应用放到1-9标签*/
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_Left,   rotatetags,     {.i = -1 } },
+	{ MODKEY,                       XK_Left,   rotatetags,     {.i = -1 } },/* 左右切换tag */
 	{ MODKEY,                       XK_Right,  rotatetags,     {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -150,8 +149,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },/* 按两次退出dwm */
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, /* 按两次重启刷新dwm */
 };
 
 /* button definitions */
@@ -161,6 +160,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+	/* 给dwmblocks传递 1>点击 2>按滚轮 3>右击 45>滑动滚轮 */
 	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
 	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
 	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
