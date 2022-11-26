@@ -1,16 +1,61 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+<<<<<<< HEAD
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+=======
+<<<<<<< HEAD
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+=======
+<<<<<<< HEAD
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+=======
+static const unsigned int borderpx  = 1;        /* 窗口边框大小 */
+>>>>>>> 4f9b751 (💻My desktop window manager.)
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 static const unsigned int gappx     = 1;        /* gaps between windows */
 static const unsigned int snap      = 1;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 static const unsigned int systraypinning = 5;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 8;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
 static const Bool viewontag	    = True;     /* Switch View on tag switch */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+static const int newclienway             = 1;        /* 0 means bottom bar */
+static const unsigned int systraypinning = 0;   /* 0: 选择显示的显示器, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 5;   /* systray spacing */
+static const int systraypinningfailfirst = 1;   /* 1: 如果固定失败，在第一个显示器显示任务栏, False: 在最后显示器显示*/
+static const int showsystray             = 1;   /* 0 means no systray */
+/* layout(s) */
+static const float mfact     = 0.6; /* 窗口比例 */
+static const int nmaster     = 1;   /* 主工作区 窗口数量 */
+static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+/* overview */
+static const int overviewgappi           = 24;        /* overview时 窗口与边缘 缝隙大小 */
+static const int overviewgappo           = 60;        /* overview时 窗口与窗口 缝隙大小 */
+static const char *overviewtag = " :) ";
+static const Layout overviewlayout = { " :) ", overview };
+/* commands */
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname , "-g", "120x34", NULL };
+/* fonts & color */
+>>>>>>> 4f9b751 (💻My desktop window manager.)
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 static const char *fonts[]          = { 
 	"JetBrainsMono Nerd Font:size=16",
 };
@@ -26,6 +71,13 @@ static const unsigned int alphas[][3]      = {
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 
 /* tagging */
 static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
@@ -42,6 +94,28 @@ static const Launcher launchers[] = {
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+/* Lockfile */
+static char lockfile[] = "/tmp/dwm.lock";
+/* tagging */
+static const char *tags[] = { " ", "贰","叁","肆","伍","陆","柒","捌","玖" };
+
+/* launcher commands (They must be NULL terminated) */
+static const char* fireGithub[] = { "firefox", "https://github.com/lorre0322", NULL };
+static const Launcher launchers[] = {
+  /* command     name to display */
+	{ fireGithub , "Lorre" },
+};
+
+
+/*  */
+>>>>>>> 4f9b751 (💻My desktop window manager.)
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 static const Rule rules[] = {
 	/* class		|instance	|title		|tags mask|isfloating| monitor */
 	{ "netease-cloud-music"	, NULL		, NULL		, 0	 , 1	, -1	},
@@ -49,6 +123,13 @@ static const Rule rules[] = {
 	{ NULL			, "wechat.exe"	, NULL		, 0	 , 1	, -1	},
 };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 /* layout(s) */
 static const float mfact     = 0.55; /* 窗口比例 */
 static const int nmaster     = 1;    /* number of clients in master area */
@@ -60,6 +141,19 @@ static const Layout layouts[] = {
 	{ "  ",      tile },    /* 平铺 */
 	{ "  ",      NULL },    /* 窗口 */
 	{ "-M-",      monocle },/* 单应用 */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+
+static const Layout layouts[] = {
+	/* symbol     arrange function */
+	{ " ﬿ ",      tile },         /* 平铺 */
+  { " 﩯 ",      magicgrid },    /* 网格 */
+>>>>>>> 4f9b751 (💻My desktop window manager.)
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 };
 
 /* key definitions */
@@ -75,6 +169,13 @@ static const Layout layouts[] = {
 
 #define STATUSBAR "dwmblocks"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 /* commands */
 static const char *rofi[] ={"rofi","-show","drun",NULL};
 static const char *termcmd[]  = { "st", NULL };
@@ -140,6 +241,60 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_Left,   rotatetags,     {.i = -1 } },/* 左右切换tag */
 	{ MODKEY,                       XK_Right,  rotatetags,     {.i = +1 } },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+
+static Key keys[] = {
+	/* modifier                     key        function        argument */
+	/* 布局设置 */
+	{ MODKEY,           XK_b,      togglebar,      {0} },/* 隐藏顶栏 */
+	{ MODKEY|ShiftMask, XK_j,      rotatestack,    {.i = +1 } },/* 切换窗口堆栈 */
+	{ MODKEY|ShiftMask, XK_k,      rotatestack,    {.i = -1 } },
+	{ MODKEY,           XK_j,      focusstack,     {.i = +1 } },/* 切换聚焦窗口 */
+	{ MODKEY,           XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,           XK_e,      incnmaster,     {.i = +1 } }, /* 改变横竖布局 */
+	{ MODKEY,           XK_comma,  setmfact,       {.f = -0.05} },/* 改变窗口比例 */
+	{ MODKEY,           XK_period, setmfact,       {.f = +0.05} },
+	{ MODKEY,           XK_Return, zoom,           {0} },/* 第一二应用换位 */
+	{ MODKEY,           XK_Tab,    view,           {0} },/* 切换tag */
+	{ MODKEY,           XK_q,      killclient,     {0} },/* 关闭窗口 */
+	{ MODKEY|ShiftMask, XK_f,      fullscreen,     {0} },/* 全屏 */
+	{ MODKEY,           XK_space,  setlayout,      {0} },/* 选择布局 */
+	{ MODKEY|ShiftMask, XK_space,  togglefloating, {0} },/* 切换浮动 */
+	{ MODKEY,           XK_0,      view,           {.ui = ~0 } },/* 跳转到1-9标签 */
+	{ MODKEY|ShiftMask, XK_0,      tag,            {.ui = ~0 } },/* 把应用放到1-9标签*/
+	{ MODKEY,           XK_Left,   rotatetags,     {.i = -1 } },/* 左右切换tag */ 
+	{ MODKEY,           XK_Right,  rotatetags,     {.i = +1 } },
+	{ MODKEY,           XK_t,      setlayout,      {.v = &layouts[0]} },/* 更换布局1 */
+	{ MODKEY,           XK_f,      setlayout,      {.v = &layouts[1]} },
+  { MODKEY,           XK_a,      toggleoverview, {0} }, /* 显示所有tag 或 跳转到聚焦窗口的tag */
+
+	/* 自定义打开应用 SHCMD("")*/
+	{ MODKEY,           XK_p,      spawn,          SHCMD("rofi -show drun") },
+	{ MODKEY,           XK_s,      spawn,          SHCMD("deepin-screenshot") },
+	{ MODKEY|ShiftMask, XK_Return, spawn,          SHCMD("st") },
+	{ MODKEY,           XK_c, 	   spawn,          SHCMD("firefox") },	
+	{ MODKEY,           XK_grave,  togglescratch,  {.v = scratchpadcmd} },/* 临时终端 */
+
+
+	/* 自定义音量管理按键 */
+	{ MODKEY,           XK_F11,	   spawn,          SHCMD("amixer set Master 5%-") },
+	{ MODKEY,           XK_F12,    spawn,          SHCMD("amixer set Master 5%+") },
+	{ MODKEY|ShiftMask,	XK_F12,    spawn,          SHCMD("amixer set Master toggle") },
+	{ MODKEY,           XK_F9, 	   spawn,          SHCMD("mpc prev") },
+	{ MODKEY,           XK_F10,    spawn,          SHCMD("mpc next") },
+	{ MODKEY|ShiftMask, XK_F10,    spawn,          SHCMD("mpc toggle") },
+	/* 自定义音乐播放 */
+	{ MODKEY,           XK_F7,	   spawn,          SHCMD("xrandr --output HDMI-0 --brightness 0.7") },
+	{ MODKEY,           XK_F8,	   spawn,          SHCMD("xrandr --output HDMI-0 --brightness 0.9") },
+	{ MODKEY|ShiftMask, XK_F8,	   spawn,          SHCMD("xrandr --output HDMI-0 --brightness 1") },
+
+>>>>>>> 4f9b751 (💻My desktop window manager.)
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

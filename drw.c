@@ -234,7 +234,19 @@ drw_setfontset(Drw *drw, Fnt *set)
 {
 	if (drw)
 		drw->fonts = set;
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+<<<<<<< HEAD
+}
+=======
+} 
+>>>>>>> 4f9b751 (💻My desktop window manager.)
+>>>>>>> 8d4e335 (💻My desktop window manager.)
+>>>>>>> 302231c (💻My desktop window manager.)
 
 void
 drw_setscheme(Drw *drw, Clr *scm)
