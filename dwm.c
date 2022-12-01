@@ -50,20 +50,8 @@
 #define CLEANMASK(mask)         (mask & ~(numlockmask|LockMask) & (ShiftMask|ControlMask|Mod1Mask|Mod2Mask|Mod3Mask|Mod4Mask|Mod5Mask))
 #define INTERSECT(x,y,w,h,m)    (MAX(0, MIN((x)+(w),(m)->wx+(m)->ww) - MAX((x),(m)->wx)) \
                                * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
-<<<<<<< HEAD
-#define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
-=======
-<<<<<<< HEAD
-#define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
-=======
-<<<<<<< HEAD
-#define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
-=======
 #define ISVISIBLE(C)            ((C->mon->isoverview || C->tags & C->mon->tagset[C->mon->seltags]))
 #define HIDDEN(C)               ((getstate(C->win) == IconicState))
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 #define LENGTH(X)               (sizeof X / sizeof X[0])
 #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw + gappx)
@@ -152,16 +140,7 @@ struct Monitor {
 	int nmaster;
 	int num;
 	int by;               /* bar geometry */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 	int bt;
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	int mx, my, mw, mh;   /* screen size */
 	int wx, wy, ww, wh;   /* window area  */
 	unsigned int seltags;
@@ -176,16 +155,7 @@ struct Monitor {
 	Window barwin;
 	const Layout *lt[2];
 	Pertag *pertag;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
   int isoverview;
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 };
 
 typedef struct {
@@ -227,38 +197,12 @@ static Monitor *createmon(void);
 static void destroynotify(XEvent *e);
 static void detach(Client *c);
 static void detachstack(Client *c);
-<<<<<<< HEAD
-static Monitor *dirtomon(int dir);
-=======
-<<<<<<< HEAD
-static Monitor *dirtomon(int dir);
-=======
-<<<<<<< HEAD
-static Monitor *dirtomon(int dir);
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 static void drawbar(Monitor *m);
 static void drawbars(void);
-static void enqueue(Client *c);
-static void enqueuestack(Client *c);
 static void enternotify(XEvent *e);
 static void expose(XEvent *e);
 static void focus(Client *c);
 static void focusin(XEvent *e);
-<<<<<<< HEAD
-static void focusmon(const Arg *arg);
-=======
-<<<<<<< HEAD
-static void focusmon(const Arg *arg);
-=======
-<<<<<<< HEAD
-static void focusmon(const Arg *arg);
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 static void focusstack(const Arg *arg);
 static Atom getatomprop(Client *c, Atom prop);
 static int getrootptr(int *x, int *y);
@@ -274,18 +218,6 @@ static void killclient(const Arg *arg);
 static void manage(Window w, XWindowAttributes *wa);
 static void mappingnotify(XEvent *e);
 static void maprequest(XEvent *e);
-<<<<<<< HEAD
-static void monocle(Monitor *m);
-=======
-<<<<<<< HEAD
-static void monocle(Monitor *m);
-=======
-<<<<<<< HEAD
-static void monocle(Monitor *m);
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
@@ -299,7 +231,6 @@ static void resizemouse(const Arg *arg);
 static void removesystrayicon(Client *i);
 static void resizerequest(XEvent *e);
 static void restack(Monitor *m);
-static void rotatestack(const Arg *arg);
 static void rotatetags(const Arg *arg);
 static void run(void);
 static void runAutostart(void);
@@ -322,26 +253,11 @@ static void sigterm(int unused);
 static void spawn(const Arg *arg);
 static Monitor *systraytomon(Monitor *m);
 static void tag(const Arg *arg);
-<<<<<<< HEAD
-static void tagmon(const Arg *arg);
-static void tile(Monitor *);
-=======
-<<<<<<< HEAD
-static void tagmon(const Arg *arg);
-static void tile(Monitor *);
-=======
-<<<<<<< HEAD
-static void tagmon(const Arg *arg);
-static void tile(Monitor *);
-=======
 static void tile(Monitor *);
 static void magicgrid(Monitor *m);
 static void overview(Monitor *m);
 static void grid(Monitor *m, uint gappo, uint uappi);
 
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglescratch(const Arg *arg);
@@ -364,17 +280,8 @@ static void updatetitle(Client *c);
 static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 static void toggleoverview(const Arg *arg);
 
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 static Client *wintoclient(Window w);
 static Monitor *wintomon(Window w);
 static Client *wintosystrayicon(Window w);
@@ -517,19 +424,7 @@ applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
 		*h = bh;
 	if (*w < bh)
 		*w = bh;
-<<<<<<< HEAD
-	if (resizehints || c->isfloating || !c->mon->lt[c->mon->sellt]->arrange) {
-=======
-<<<<<<< HEAD
-	if (resizehints || c->isfloating || !c->mon->lt[c->mon->sellt]->arrange) {
-=======
-<<<<<<< HEAD
-	if (resizehints || c->isfloating || !c->mon->lt[c->mon->sellt]->arrange) {
-=======
 	if ( c->isfloating || !c->mon->lt[c->mon->sellt]->arrange) {
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 		if (!c->hintsvalid)
 			updatesizehints(c);
 		/* see last two sentences in ICCCM 4.1.2.3 */
@@ -582,21 +477,6 @@ arrange(Monitor *m)
 void
 arrangemon(Monitor *m)
 {
-<<<<<<< HEAD
-	strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof m->ltsymbol);
-	if (m->lt[m->sellt]->arrange)
-		m->lt[m->sellt]->arrange(m);
-=======
-<<<<<<< HEAD
-	strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof m->ltsymbol);
-	if (m->lt[m->sellt]->arrange)
-		m->lt[m->sellt]->arrange(m);
-=======
-<<<<<<< HEAD
-	strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof m->ltsymbol);
-	if (m->lt[m->sellt]->arrange)
-		m->lt[m->sellt]->arrange(m);
-=======
 	if (m->isoverview) {
 		strncpy(m->ltsymbol, overviewlayout.symbol, sizeof m->ltsymbol);
 		overviewlayout.arrange(m);
@@ -607,26 +487,11 @@ arrangemon(Monitor *m)
 	// strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof m->ltsymbol);
 	// if (m->lt[m->sellt]->arrange)
 	// 	m->lt[m->sellt]->arrange(m);
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 }
 
 void
 attach(Client *c)
 {
-<<<<<<< HEAD
-	c->next = c->mon->clients;
-	c->mon->clients = c;
-=======
-<<<<<<< HEAD
-	c->next = c->mon->clients;
-	c->mon->clients = c;
-=======
-<<<<<<< HEAD
-	c->next = c->mon->clients;
-	c->mon->clients = c;
-=======
 	if (newclienway) {
 			Client **tc;
 			for (tc = &c->mon->clients; *tc; tc = &(*tc)->next);
@@ -636,9 +501,6 @@ attach(Client *c)
 			c->next = c->mon->clients;
 			c->mon->clients = c;
 	}
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 }
 
 void
@@ -668,26 +530,6 @@ buttonpress(XEvent *e)
 	if (ev->window == selmon->barwin) {
 		i = x = 0;
 		unsigned int occ = 0;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-		for(c = m->clients; c; c=c->next)
-			occ |= c->tags;
-		do {
-			/* Do not reserve space for vacant tags */
-			if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
-				continue;
-			x += TEXTW(tags[i]);
-		} while (ev->x >= x && ++i < LENGTH(tags));
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
     if (selmon->isoverview) {
 			x += TEXTW(overviewtag);
 			i = ~0;
@@ -703,9 +545,6 @@ buttonpress(XEvent *e)
 		  	x += TEXTW(tags[i]);
 		  } while (ev->x >= x && ++i < LENGTH(tags));
 		}
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 		if (i < LENGTH(tags)) {
 			click = ClkTagBar;
 			arg.ui = 1 << i;
@@ -716,16 +555,7 @@ buttonpress(XEvent *e)
 		}
 
 		x += blw;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 		if (m->bt == 0) return;
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 
 		for(i = 0; i < LENGTH(launchers); i++) {
 			x += TEXTW(launchers[i].name);
@@ -868,6 +698,9 @@ clientmessage(XEvent *e)
 			XAddToSaveSet(dpy, c->win);
 			XSelectInput(dpy, c->win, StructureNotifyMask | PropertyChangeMask | ResizeRedirectMask);
 			XReparentWindow(dpy, c->win, systray->win, 0, 0);
+      XClassHint ch = {"dwmsystray", "dwmsystray"};
+      XSetClassHint(dpy, c->win, &ch);
+
 			/* use parents background color */
 			swa.background_pixel  = scheme[SchemeNorm][ColBg].pixel;
 			XChangeWindowAttributes(dpy, c->win, CWBackPixel, &swa);
@@ -1008,19 +841,7 @@ createmon(void)
 	strncpy(m->ltsymbol, layouts[0].symbol, sizeof m->ltsymbol);
 	m->pertag = ecalloc(1, sizeof(Pertag));
 	m->pertag->curtag = m->pertag->prevtag = 1;
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
 	m->isoverview = 0;
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	for (i = 0; i <= LENGTH(tags); i++) {
 		m->pertag->nmasters[i] = m->nmaster;
 		m->pertag->mfacts[i] = m->mfact;
@@ -1072,36 +893,6 @@ detachstack(Client *c)
 	}
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-Monitor *
-dirtomon(int dir)
-{
-	Monitor *m = NULL;
-
-	if (dir > 0) {
-		if (!(m = selmon->next))
-			m = mons;
-	} else if (selmon == mons)
-		for (m = mons; m->next; m = m->next);
-	else
-		for (m = mons; m->next != selmon; m = m->next);
-	return m;
-}
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 void
 drawbar(Monitor *m)
 {
@@ -1119,15 +910,6 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, m->ww - stw, 0, stw, bh, 1, 1);
 	}
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
   x = 1;
   // 代表为overview tag状态
   if (m->isoverview) {
@@ -1151,9 +933,6 @@ drawbar(Monitor *m)
       x += w;
     }
   }
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		char *text, *s, ch;
@@ -1240,16 +1019,7 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, x, 0, w, bh, 1, 1);
 	}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 	m->bt = n;
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
 }
 
@@ -1263,28 +1033,6 @@ drawbars(void)
 
 	if (showsystray && !systraypinning)
 		updatesystray(0);
-}
-
-void
-enqueue(Client *c)
-{
-	Client *l;
-	for (l = c->mon->clients; l && l->next; l = l->next);
-	if (l) {
-		l->next = c;
-		c->next = NULL;
-	}
-}
-
-void
-enqueuestack(Client *c)
-{
-	Client *l;
-	for (l = c->mon->stack; l && l->snext; l = l->snext);
-	if (l) {
-		l->snext = c;
-		c->snext = NULL;
-	}
 }
 
 void
@@ -1355,53 +1103,13 @@ focusin(XEvent *e)
 		setfocus(selmon->sel);
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-void
-focusmon(const Arg *arg)
-{
-	Monitor *m;
-
-	if (!mons->next)
-		return;
-	if ((m = dirtomon(arg->i)) == selmon)
-		return;
-	unfocus(selmon->sel, 0);
-	selmon = m;
-	focus(NULL);
-}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 
 void
 focusstack(const Arg *arg)
 {
 	Client *c = NULL, *i;
 
-<<<<<<< HEAD
-	if (!selmon->sel || (selmon->sel->isfullscreen && lockfullscreen))
-=======
-<<<<<<< HEAD
-	if (!selmon->sel || (selmon->sel->isfullscreen && lockfullscreen))
-=======
-<<<<<<< HEAD
-	if (!selmon->sel || (selmon->sel->isfullscreen && lockfullscreen))
-=======
 	if (!selmon->sel || (selmon->sel->isfullscreen))
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 		return;
 	if (arg->i > 0) {
 		for (c = selmon->sel->next; c && !ISVISIBLE(c); c = c->next);
@@ -1504,8 +1212,9 @@ getsystraywidth()
 	unsigned int w = 0;
 	Client *i;
 	if (showsystray)
-		for (i = systray->icons; i; w += i->w + systrayspacing, i = i->next);
-	return w ? w + systrayspacing : 0;
+		for(i = systray->icons; i; w += MAX(i->w, bh) + systrayspacing, i = i->next) ;
+		// for (i = systray->icons; i; w += i->w + systrayspacing, i = i->next);
+	return w ? w + systrayspacing : 1;
 }
 
 int
@@ -1575,18 +1284,6 @@ grabkeys(void)
 void
 incnmaster(const Arg *arg)
 {
-<<<<<<< HEAD
-	selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag] = MAX(selmon->nmaster + arg->i, 0);
-	arrange(selmon);
-=======
-<<<<<<< HEAD
-	selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag] = MAX(selmon->nmaster + arg->i, 0);
-	arrange(selmon);
-=======
-<<<<<<< HEAD
-	selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag] = MAX(selmon->nmaster + arg->i, 0);
-	arrange(selmon);
-=======
     int nmaster = selmon->nmaster + arg->i;
     if (selmon->bt <= 1)
         nmaster = 1;
@@ -1594,9 +1291,6 @@ incnmaster(const Arg *arg)
         nmaster = 1;
     selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag] = MAX(nmaster, 1);
     arrange(selmon);
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 }
 
 #ifdef XINERAMA
@@ -1744,36 +1438,6 @@ maprequest(XEvent *e)
 }
 
 void
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-monocle(Monitor *m)
-{
-	unsigned int n = 0;
-	Client *c;
-
-	for (c = m->clients; c; c = c->next)
-		if (ISVISIBLE(c))
-			n++;
-	if (n > 0) /* override layout symbol */
-		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
-	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
-		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
-}
-
-void
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 motionnotify(XEvent *e)
 {
 	static Monitor *mon = NULL;
@@ -1861,7 +1525,8 @@ void
 pop(Client *c)
 {
 	detach(c);
-	attach(c);
+	c->next = c->mon->clients;
+	c->mon->clients = c;
 	focus(c);
 	arrange(c->mon);
 }
@@ -1979,48 +1644,6 @@ void
 resizeclient(Client *c, int x, int y, int w, int h)
 {
 	XWindowChanges wc;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-	unsigned int n;
-	unsigned int gapoffset;
-	unsigned int gapincr;
-	Client *nbc;
-
-	wc.border_width = c->bw;
-
-	/* Get number of clients for the client's monitor */
-	for (n = 0, nbc = nexttiled(c->mon->clients); nbc; nbc = nexttiled(nbc->next), n++);
-
-	/* Do nothing if layout is floating */
-	if (c->isfloating || c->mon->lt[c->mon->sellt]->arrange == NULL) {
-		gapincr = gapoffset = 0;
-	} else {
-		/* Remove border and gap if layout is monocle or only one client */
-		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
-			gapoffset = 0;
-			gapincr = -2 * borderpx;
-			wc.border_width = 0;
-		} else {
-			gapoffset = gappx;
-			gapincr = 2 * gappx;
-		}
-	}
-
-	c->oldx = c->x; c->x = wc.x = x + gapoffset;
-	c->oldy = c->y; c->y = wc.y = y + gapoffset;
-	c->oldw = c->w; c->w = wc.width = w - gapincr;
-	c->oldh = c->h; c->h = wc.height = h - gapincr;
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
 	c->oldx = c->x; c->x = wc.x = x;
 	c->oldy = c->y; c->y = wc.y = y;
 	c->oldw = c->w; c->w = wc.width = w;
@@ -2033,9 +1656,6 @@ resizeclient(Client *c, int x, int y, int w, int h)
 		c->h = wc.height += c->bw * 2;
 		wc.border_width = 0;
 	}
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
 	configure(c);
 	XSync(dpy, False);
@@ -2135,51 +1755,7 @@ restack(Monitor *m)
 	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 }
 
-void
-rotatestack(const Arg *arg)
-{
-	Client *c = NULL, *f;
-
-	if (!selmon->sel)
-		return;
-	f = selmon->sel;
-	if (arg->i > 0) {
-		for (c = nexttiled(selmon->clients); c && nexttiled(c->next); c = nexttiled(c->next));
-		if (c){
-			detach(c);
-			attach(c);
-			detachstack(c);
-			attachstack(c);
-		}
-	} else {
-		if ((c = nexttiled(selmon->clients))){
-			detach(c);
-			enqueue(c);
-			detachstack(c);
-			enqueuestack(c);
-		}
-	}
-	if (c){
-		arrange(selmon);
-		//unfocus(f, 1);
-		focus(f);
-		restack(selmon);
-	}
-}
-
-<<<<<<< HEAD
-void
-=======
-<<<<<<< HEAD
-void
-=======
-<<<<<<< HEAD
-void
-=======
 void 
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 rotatetags(const Arg *arg)
 {
 	const int rot = abs(arg->i);
@@ -2325,19 +1901,7 @@ setfullscreen(Client *c, int fullscreen)
 {
 	if (fullscreen && !c->isfullscreen) {
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
-<<<<<<< HEAD
-			PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
-=======
-<<<<<<< HEAD
-			PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
-=======
-<<<<<<< HEAD
-			PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
-=======
 		PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 		c->isfullscreen = 1;
 		c->oldstate = c->isfloating;
 		c->oldbw = c->bw;
@@ -2364,25 +1928,6 @@ Layout *last_layout;
 void
 fullscreen(const Arg *arg)
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-	if (selmon->showbar) {
-		for(last_layout = (Layout *)layouts; last_layout != selmon->lt[selmon->sellt]; last_layout++);
-		setlayout(&((Arg) { .v = &layouts[2] }));
-	} else {
-		setlayout(&((Arg) { .v = last_layout }));
-	}
-	togglebar(arg);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
   if (selmon->sel) {
 	  if (selmon->showbar)
 	    setfullscreen(selmon->sel, 1);
@@ -2390,9 +1935,6 @@ fullscreen(const Arg *arg)
 	    setfullscreen(selmon->sel, 0);
   }
   togglebar(arg);
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 }
 
 void
@@ -2607,7 +2149,7 @@ systraytomon(Monitor *m)
 	}
 	for (n = 1, t = mons; t && t->next; n++, t = t->next);
 	for (i = 1, t = mons; t && t->next && i < systraypinning; i++, t = t->next);
-	if (systraypinningfailfirst && n < systraypinning)
+	if (n < systraypinning)
 		return mons;
 	return t;
 }
@@ -2619,40 +2161,12 @@ tag(const Arg *arg)
 		selmon->sel->tags = arg->ui & TAGMASK;
 		focus(NULL);
 		arrange(selmon);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
-		if(viewontag && ((arg->ui & TAGMASK) != TAGMASK))
-			view(arg);
-	}
-}
-
-void
-tagmon(const Arg *arg)
-{
-	if (!selmon->sel || !mons->next)
-		return;
-	sendmon(selmon->sel, dirtomon(arg->i));
-}
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
 		view(&(Arg) { .ui = arg->ui });
 	}else
 		view(arg);
 }
 
 /* Layout */
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 void
 tile(Monitor *m)
 {
@@ -2680,12 +2194,6 @@ tile(Monitor *m)
 				ty += HEIGHT(c);
 		}
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 void
 magicgrid(Monitor *m)
 {
@@ -2760,9 +2268,6 @@ grid(Monitor *m, uint gappo, uint gappi)
       0);
 	}
 }
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 
 void
 togglebar(const Arg *arg)
@@ -2846,18 +2351,6 @@ toggleview(const Arg *arg)
 {
 	unsigned int newtagset = selmon->tagset[selmon->seltags] ^ (arg->ui & TAGMASK);
 	int i;
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	if (newtagset) {
 		selmon->tagset[selmon->seltags] = newtagset;
 
@@ -2948,6 +2441,7 @@ unmapnotify(XEvent *e)
 void
 updatebars(void)
 {
+	unsigned int w;
 	Monitor *m;
 	XSetWindowAttributes wa = {
 		.override_redirect = True,
@@ -2960,9 +2454,11 @@ updatebars(void)
 	for (m = mons; m; m = m->next) {
 		if (m->barwin)
 			continue;
+		w = m->ww;
+		if (showsystray && m == systraytomon(m))
+		w -= getsystraywidth();
 		m->barwin = XCreateWindow(dpy, root, m->wx, m->by, m->ww, bh, 0, depth,
-		                          InputOutput, visual,
-		                          CWOverrideRedirect|CWBackPixel|CWBorderPixel|CWColormap|CWEventMask, &wa);
+			InputOutput, visual, CWOverrideRedirect|CWBackPixel|CWBorderPixel|CWColormap|CWEventMask, &wa);
 		XDefineCursor(dpy, m->barwin, cursor[CurNormal]->cursor);
 		if (showsystray && m == systraytomon(m))
 			XMapRaised(dpy, systray->win);
@@ -3140,19 +2636,7 @@ void
 updatestatus(void)
 {
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
-<<<<<<< HEAD
-		strcpy(stext, "dwm-"VERSION);
-=======
-<<<<<<< HEAD
-		strcpy(stext, "dwm-"VERSION);
-=======
-<<<<<<< HEAD
-		strcpy(stext, "dwm-"VERSION);
-=======
 		strcpy(stext, "Hi Lorre ~ :)  "); // 默认的状态栏文本
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 		statusw = TEXTW(stext) - lrpad + 2;
 	} else {
 		char *text, *s, ch;
@@ -3168,18 +2652,6 @@ updatestatus(void)
 			}
 		}
 		statusw += TEXTW(text) - lrpad + 2;
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	}
 	drawbar(selmon);
 }
@@ -3360,28 +2832,10 @@ view(const Arg *arg)
 {
 	int i;
 	unsigned int tmptag;
-<<<<<<< HEAD
-
-	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
-		return;
-=======
-<<<<<<< HEAD
-
-	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
-		return;
-=======
-<<<<<<< HEAD
-
-	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
-		return;
-=======
 	Client *c;
 	int n = 0;
 	// if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 	// 	return;
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 	selmon->seltags ^= 1; /* toggle sel tagset */
 	if (arg->ui & TAGMASK) {
 		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
@@ -3410,12 +2864,6 @@ view(const Arg *arg)
 
 	focus(NULL);
 	arrange(selmon);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 	if (arg->v) {
 		for (c = selmon->clients; c; c = c->next)
 		if (c->tags & arg->ui && !HIDDEN(c))
@@ -3424,9 +2872,6 @@ view(const Arg *arg)
 			spawn(&(Arg){ .v = (const char*[]){ "/bin/sh", "-c", arg->v, NULL } });
 		}
 	}
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 }
 
 Client *
@@ -3458,12 +2903,6 @@ wintomon(Window w)
 		return c->mon;
 	return selmon;
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 void
 pointerfocuswin(Client *c)
 {
@@ -3484,9 +2923,6 @@ toggleoverview(const Arg *arg)
     view(&(Arg){ .ui = target });
     pointerfocuswin(selmon->sel);
 }
->>>>>>> 4f9b751 (💻My desktop window manager.)
->>>>>>> 8d4e335 (💻My desktop window manager.)
->>>>>>> 302231c (💻My desktop window manager.)
 
 Client *
 wintosystrayicon(Window w) {
@@ -3573,11 +3009,9 @@ xinitvisual()
 
 void
 zoom(const Arg *arg)
-{
+{ 
 	Client *c = selmon->sel;
-
-	if (!selmon->lt[selmon->sellt]->arrange
-	|| (selmon->sel && selmon->sel->isfloating))
+	if (c && (c->isfloating || c->isfullscreen))
 		return;
 	if (c == nexttiled(selmon->clients))
 		if (!c || !(c = nexttiled(c->next)))
