@@ -1,0 +1,6 @@
+
+export _music='^smusic^ 󰝚 Pandora樂隊 - 风月  '
+export _cpu='^scpu^ 󰻠 16%  '
+export _mem='^smem^󰍛 12% '
+export _date='^sdate^  05/08 21:12 '
+export _voice='^svoice^ 󰕾 83 % '
