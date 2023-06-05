@@ -56,7 +56,7 @@ static const unsigned int alphas[][3]    = {
   
 };
 
-// 自定义脚本位置
+// 自定义脚本位置 自启动 | 状态栏
 static const char *autostartscript = "$DWM/statusbar/autostart.sh";
 static const char *statusbarscript = "$DWM/statusbar/statusbar.sh";
 
@@ -143,12 +143,12 @@ static Key keys[] = {
   { MODKEY|ShiftMask,    XK_Return,    spawn,          SHCMD("st") },
   { MODKEY,              XK_p,         spawn,          SHCMD("rofi -show drun") },
   { MODKEY,              XK_e,         spawn,          SHCMD("thunar") },
-  { MODKEY,              XK_c,         spawn,          SHCMD("chromium") },
+  { MODKEY,              XK_c,         spawn,          SHCMD("/opt/microsoft/msedge/microsoft-edge") },
   { MODKEY,              XK_s,         spawn,          SHCMD("deepin-screenshot") },
   // 自定义命令 音量 | 音乐 | 亮度
-  { MODKEY,              XK_equal,	   spawn,          SHCMD("amixer set Master 5%+") },
+  { MODKEY,              XK_equal,     spawn,          SHCMD("amixer set Master 5%+") },
   { MODKEY,              XK_minus,     spawn,          SHCMD("amixer set Master 5%-") },
-  { MODKEY|ShiftMask,	   XK_equal,     spawn,          SHCMD("amixer set Master toggle") },
+  { MODKEY|ShiftMask,    XK_equal,     spawn,          SHCMD("amixer set Master toggle") },
   { MODKEY,              XK_9, 	       spawn,          SHCMD("mpc prev") },
   { MODKEY,              XK_0,         spawn,          SHCMD("mpc next") },
   { MODKEY|ShiftMask,    XK_0,         spawn,          SHCMD("mpc toggle") },
@@ -164,7 +164,7 @@ static Key keys[] = {
   TAGKEYS(XK_y, 2, "firefox")
   TAGKEYS(XK_u, 3, "code")
   TAGKEYS(XK_i, 4, 0)
-  TAGKEYS(XK_o, 5, "/opt/apps/com.qq.weixin.deepin/files/run.sh")
+  TAGKEYS(XK_o, 5, 0)
 };
 
 static const char *tags[] = { "󰟀","󰝚","󰌀","󰅯","󰙴","󰄄" };

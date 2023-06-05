@@ -1,6 +1,6 @@
 
-export _music='^smusic^ 󰝚 Pandora樂隊 - 风月  '
-export _cpu='^scpu^ 󰻠 16%  '
-export _mem='^smem^󰍛 12% '
-export _date='^sdate^  05/08 21:12 '
-export _voice='^svoice^ 󰕾 83 % '
+export _music='^smusic^ 󰝚 陈奕迅 - 绵绵   '
+export _cpu='^scpu^ 󰻠 03%  '
+export _mem='^smem^󰍛 18% '
+export _date='^sdate^  06/05 18:42 '
+export _voice='^svoice^ 󰕾 82 % '
