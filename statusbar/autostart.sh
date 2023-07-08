@@ -9,7 +9,7 @@ daemons() {
     [ $1 ] && sleep $1
     picom --experimental-backends &
     #picom  &
-    feh --bg-fill ~/Desktop/dwm/wallpaper/03.jpg
+    feh --bg-fill ~/Desktop/dwm/wallpaper/02.jpg
     fcitx5 &
     $_thisdir/statusbar.sh cron &   # 开启状态栏定时更新
     mpd &
@@ -22,7 +22,7 @@ cron() {
     let i=10
     while true; do
         # [ $((i % 10)) -eq 0 ] && ~/scripts/set_screen.sh check # 每10秒检查显示器状态 以此自动设置显示器
-        [ $((i % 300)) -eq 0 ] && feh --randomize --bg-fill ~/Desktop/dwm/wallpaper/*.jpg # 每300秒更新壁纸
+        [ $((i % 300)) -eq 0 ] && feh --randomize --bg-fill ~/Desktop/dwm/wallpaper/02.jpg # 每300秒更新壁纸
         sleep 10; let i+=10
     done
 }

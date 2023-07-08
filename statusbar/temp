@@ -1,6 +1,6 @@
 
-export _music='^smusic^ 󰝚 George Benson - Affirmation   '
+export _music='^smusic^ 󰝚 Pandora樂隊 - 风月   '
 export _cpu='^scpu^ 󰻠 100%  '
-export _mem='^smem^󰍛 37% '
-export _date='^sdate^  07/08 16:48 '
-export _voice='^svoice^ 󰕾 98 % '
+export _mem='^smem^󰍛 34% '
+export _date='^sdate^  07/08 22:21 '
+export _voice='^svoice^ 󰕾 95 % '
