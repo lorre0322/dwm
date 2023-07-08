@@ -33,8 +33,7 @@ call_ncmpcpp() {
 click() {
     case "$1" in
         L) mpc toggle | filter | notify ;; 
-        M) mpc listall | mpc del | mpc add ; notify-send "   歌单已刷新~" ;;
-        # R) sudo setsid -f st -e ncmpcpp ;;
+        M) mpc listall | mpc del ; mpc listall | mpc add; notify-send "   歌单已刷新~" ;;
         R) call_ncmpcpp ;;
         U) mpc prev | filter | notify ;;
         D) mpc next | filter | notify ;;

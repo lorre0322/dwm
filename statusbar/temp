@@ -1,6 +1,6 @@
 
-export _music='^smusic^ 󰝚 陈奕迅 - 绵绵   '
-export _cpu='^scpu^ 󰻠 03%  '
-export _mem='^smem^󰍛 18% '
-export _date='^sdate^  06/05 18:42 '
-export _voice='^svoice^ 󰕾 82 % '
+export _music='^smusic^ 󰝚 George Benson - Affirmation   '
+export _cpu='^scpu^ 󰻠 100%  '
+export _mem='^smem^󰍛 37% '
+export _date='^sdate^  07/08 16:48 '
+export _voice='^svoice^ 󰕾 98 % '

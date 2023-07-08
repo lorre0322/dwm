@@ -137,7 +137,7 @@ static Key keys[] = {
   { MODKEY|Mod1Mask,     XK_Down,      resizewin,        {.ui = V_EXPAND} },
   { MODKEY|Mod1Mask,     XK_Left,      resizewin,        {.ui = H_REDUCE} },
   { MODKEY|Mod1Mask,     XK_Right,     resizewin,        {.ui = H_EXPAND} },
-
+//XK_bracketleft
   // spawn + SHCMD 执行对应命令
   { MODKEY,              XK_grave,     togglescratch,  SHCMD("st -t scratchpad -g 100x28") },
   { MODKEY|ShiftMask,    XK_Return,    spawn,          SHCMD("st") },
